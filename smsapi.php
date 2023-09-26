@@ -1,22 +1,26 @@
 
 <?php
-$username = "binary_dev";
-$Key = "izaxKBkdwiwYoYmzhSETdI6QBXAMk0jTm8q0MYFBNuk6zeMVOw";
-$senderId = "SMARTLINK";
-$tophonenumber = "+254743917360";
-$finalmessage = "Good morning there. This is a php bulky SMS interface by Mr. Kimaru. :)";
+$recipients = [254703583375, 254759350810];
 
-$url = "https://sms.movesms.co.ke/api/compose?";
-$postData = array(
-    'username' => $username,
-    'api_key' => $Key,
-    'sender' => $senderId,
-    'to' => $tophonenumber,
-    'message' => $finalmessage,
-    'msgtype' => 5,
-    //normal message
-    'dlr' => 0,
-    //no delivery report
+foreach($recipients as $recipient){
+
+    $username = "dev_bogonko";
+    $Key = "izaxKBkdwiwYoYmzhSETdI6QBXAMk0jTm8q0MYFBNuk6zeMVOw";
+    $senderId = "SMARTLINK";
+    $tophonenumber = $recipient;
+    $finalmessage = "Good morning there! This is a php bulky SMS interface test by Mr. Kimaru. :) *456*9*5#";
+
+    $url = "https://sms.movesms.co.ke/api/compose?";
+    $postData = array(
+        'username' => $username,
+        'api_key' => $Key,
+        'sender' => $senderId,
+        'to' => $tophonenumber,
+        'message' => $finalmessage,
+        'msgtype' => 5,
+        //normal message
+        'dlr' => 0,
+        //no delivery report
 );
 
 
@@ -43,4 +47,6 @@ if (curl_errno($ch)) {
 }
 
 curl_close($ch);
+
+}
 ?>
