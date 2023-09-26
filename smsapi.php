@@ -1,11 +1,12 @@
-<?php
-$username = "";
-$Key = "";
-$senderId = "";
-$tophonenumber = "";
-$finalmessage = "";
 
-$url = "https://www.sms.movesms.co.ke/api/compose?";
+<?php
+$username = "binary_dev";
+$Key = "izaxKBkdwiwYoYmzhSETdI6QBXAMk0jTm8q0MYFBNuk6zeMVOw";
+$senderId = "SMARTLINK";
+$tophonenumber = "+254743917360";
+$finalmessage = "Good morning there. This is a php bulky SMS interface by Mr. Kimaru. :)";
+
+$url = "https://sms.movesms.co.ke/api/compose?";
 $postData = array(
     'username' => $username,
     'api_key' => $Key,
@@ -34,6 +35,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
 $output = curl_exec($ch);
+echo 'SMS SENT SUCCESSFULLY!!!';
 
 if (curl_errno($ch)) {
     // echo 'error:' . curl_error($ch);
